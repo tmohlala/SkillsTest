@@ -4,7 +4,7 @@ FROM php:7-apache
 
 VOLUME /var/www/html
 
-ARG redis=2.5.0
+ARG xdebug=2.6.0
 
-RUN pecl install xdebug-${redis} \
+RUN pecl install xdebug-${xdebug} \
     && docker-php-ext-enable xdebug
