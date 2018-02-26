@@ -7,6 +7,8 @@ services:
         container_name: php-test-junior-app
         expose:
             - "9000"
+        links:
+            - test-db
         ports:
             - "8000:80"
         volumes:
