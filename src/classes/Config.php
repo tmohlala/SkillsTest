@@ -1,24 +1,26 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: jonathan
- * Date: 2018/02/26
- * Time: 3:13 PM
+ * Description of config
+ * Class for accessing site configurations.
+ * @author kingh
  */
 
-class Config
-{
+class Config {
     public static function get($path = null) {
         if($path) {
             $config = $GLOBALS['config'];
             $path = explode('/', $path);
+            
             foreach($path as $bit) {
                 if(isset($config[$bit])) {
-                    $config = $config[$bit];
+                  $config = $config[$bit];
+                }
+                else {
+                    return false;
                 }
             }
             return $config;
         }
-        return false;
     }
 }
